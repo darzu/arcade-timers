@@ -1,6 +1,10 @@
 //% color=#700204 icon="\uf254"
 //% groups='[]'
 namespace timer {
+    /**
+     * After a certain amount of time, the attached code will run.
+     * Blocks after this one will run without waiting.
+     */
     //% block="after $time do"
     //% time.defl=500
     //% handlerStatement=1
@@ -10,7 +14,9 @@ namespace timer {
     }
 
     /**
-     * Background
+     * Run the attached code seperately from other code.
+     * This creates a seperate context for "pause" so that pauses
+     * within or without this code are seperated.
      */
     //% block="separately do"
     //% handlerStatement=1
@@ -20,7 +26,9 @@ namespace timer {
 
     let decounceTimeouts: {[key: string]: number} = {}
     /**
-     * Debounce
+     * After this block hasn't been called with the given key
+     * for a certain amount of time run the attached code.
+     * Also known as "debounce".
      */
     //% block="after $key settled for $time do"
     //% time.defl=500
@@ -36,7 +44,9 @@ namespace timer {
 
     let throttleTimeouts: { [key: string]: number } = {}
     /**
-     * Throttle
+     * Ensure that the attached code isn't run more than
+     * once per time interval for the given key.
+     * Also known as "throttle".
      */
     //% block="for $key at most once every $time do"
     //% time.defl=500
