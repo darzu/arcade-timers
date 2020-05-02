@@ -1,4 +1,4 @@
-# arcade-control-flow ![Build status badge](https://github.com/darzu/arcade-control-flow/workflows/MakeCode/badge.svg)
+# MakeCode Arcade Timers ![Build status badge](https://github.com/darzu/arcade-control-flow/workflows/MakeCode/badge.svg)
 
 
 
