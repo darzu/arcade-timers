@@ -1,4 +1,4 @@
-//% color=#29918a icon="\uf27b"
+//% color=#700204 icon="\uf254"
 //% groups='[]'
 namespace control_flow {
     //% block="after $time do"
@@ -18,9 +18,7 @@ namespace control_flow {
         control.runInBackground(then)
     }
 
-    let decounceTimeouts = {
-        "_": 0
-    }
+    let decounceTimeouts: {[key: string]: number} = {}
     /**
      * Debounce
      */
@@ -30,17 +28,13 @@ namespace control_flow {
     //% handlerStatement=1
     //% %time=timePicker ms"
     export function debounce(key: string, time: number, thenDo: () => void) {
-        let oldTimeout = decounceTimeouts[key]
-        if (oldTimeout) {
-            clearTimeout(oldTimeout)
-            setTimeout(thenDo, time)
-        } else {
-
+        if (decounceTimeouts[key]) {
+            clearTimeout(decounceTimeouts[key])
         }
-        const id = setTimeout(thenDo, time)
-
+        decounceTimeouts[key] = setTimeout(thenDo, time)
     }
 
+    let throttleTimeouts: { [key: string]: number } = {}
     /**
      * Throttle
      */
@@ -50,6 +44,11 @@ namespace control_flow {
     //% handlerStatement=1
     //% %time=timePicker ms"
     export function throttle(key: string, time: number, thenDo: () => void) {
-        setTimeout(thenDo, time)
+        if (!throttleTimeouts[key]) {
+            throttleTimeouts[key] = setTimeout(() => {
+                throttleTimeouts[key] = null;
+                thenDo();
+            }, time)
+        }
     }
 }
