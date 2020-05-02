@@ -1,9 +1,9 @@
 {
-    "name": "arcade-control-flow",
+    "name": "Timer",
     "dependencies": {
         "device": "*"
     },
-    "description": "",
+    "description": "Timers and executation control.",
     "files": [
         "main.blocks",
         "main.ts",
