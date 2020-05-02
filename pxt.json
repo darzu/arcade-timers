@@ -1,0 +1,17 @@
+{
+    "name": "arcade-control-flow",
+    "dependencies": {
+        "device": "*"
+    },
+    "description": "",
+    "files": [
+        "main.blocks",
+        "main.ts",
+        "README.md",
+        "control-flow.ts"
+    ],
+    "preferredEditor": "tsprj",
+    "testFiles": [
+        "test.ts"
+    ]
+}
