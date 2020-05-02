@@ -1,6 +1,6 @@
 //% color=#700204 icon="\uf254"
 //% groups='[]'
-namespace control_flow {
+namespace timer {
     //% block="after $time do"
     //% time.defl=500
     //% handlerStatement=1
